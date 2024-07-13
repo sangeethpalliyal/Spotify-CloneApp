@@ -9,6 +9,7 @@ import 'package:spotify_clone_app/common/widgets/custom_text.dart';
 import 'package:spotify_clone_app/core/configs/assets/app_images.dart';
 import 'package:spotify_clone_app/core/configs/assets/app_vectors.dart';
 import 'package:spotify_clone_app/core/configs/theme/app_colors.dart';
+import 'package:spotify_clone_app/presentation/auth/pages/signin.dart';
 import 'package:spotify_clone_app/presentation/auth/pages/signup.dart';
 
 class SignupOrSigninPage extends StatelessWidget {
@@ -69,19 +70,30 @@ class SignupOrSigninPage extends StatelessWidget {
                           child: BasicAppButton(
                               onPressed: () {
                                 Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (BuildContext context) => const SignUpPage() )
-                                );
-                              }, title: 'Register'),
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            const SignUpPage()));
+                              },
+                              title: 'Register'),
                         ),
                         const SizedBox(
                           width: 20,
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => SignInPage(),
+                              ),
+                            );
+                          },
                           child: CustomText(
                             text: "Sign in",
-                            fontColor:context.isDarkMode ? Colors.white : Colors.black,
+                            fontColor: context.isDarkMode
+                                ? Colors.white
+                                : Colors.black,
                           ),
                         ),
                       ],

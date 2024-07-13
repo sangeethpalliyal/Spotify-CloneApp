@@ -8,6 +8,7 @@ import 'package:spotify_clone_app/common/widgets/button/basic_app_button.dart';
 import 'package:spotify_clone_app/common/widgets/custom_text.dart';
 import 'package:spotify_clone_app/core/configs/assets/app_vectors.dart';
 import 'package:spotify_clone_app/core/configs/theme/app_colors.dart';
+import 'package:spotify_clone_app/presentation/auth/pages/signin.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -94,7 +95,13 @@ class SignUpPage extends StatelessWidget {
           fontSize: 13,
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => SignInPage(),
+                ),);
+          },
           child: CustomText(
             text: 'Signin',
             fontColor: Colors.blue,
